@@ -1,5 +1,5 @@
-from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 
 def plotWordcloud(remarks):
   complete_review_text= ""
@@ -13,11 +13,9 @@ def plotWordcloud(remarks):
   plt.figure(figsize = (30,30))    
   plt.show()
 
-def plotFreqDist(remarks):              
-  stop = set(stopwords.words('english'))
+def plotFreqDist(remarks, stopwords):   
   tokens = [t for t in remarks.split()]
-  clean_tokens = tokens[:]
-  sr = stopwords.words('english')
+  clean_tokens = tokens[:]        
 
   for token in tokens:
       if token in stopwords.words('english'):
